@@ -56,8 +56,8 @@ def to_post():
     return render_template("post.html")
 
 @app.errorhandler(404)
-def say_hello_to(name):
-    return render_template("hello.html", user=name)
+def to_error(name):
+    return render_template("error.html", user=name)
 
 @app.route("/feedback", methods=["GET", "POST"])
 def get_feedback():
