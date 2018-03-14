@@ -65,6 +65,14 @@ def get_feedback():
     data.save(os.path.join(app.config['UPLOAD_FOLDER'], data))
     return render_template("feedback.html", form_data=data)
 
+@app.route("/founders")
+def to_founders():
+    return render_template("founders.html")
+
+@app.route("/webdevelopers")
+def to_webdevelopers():
+    return render_template("webdevelopers.html")
+
 
 """
 This piece of logic checks whether you are running the app locally or on Heroku
