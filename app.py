@@ -56,14 +56,22 @@ def to_post():
     return render_template("post.html")
 
 @app.errorhandler(404)
-def say_hello_to(name):
-    return render_template("hello.html", user=name)
+def to_error(name):
+    return render_template("error.html", user=name)
 
 @app.route("/feedback", methods=["GET", "POST"])
 def get_feedback():
     data = request.values['email']
     data.save(os.path.join(app.config['UPLOAD_FOLDER'], data))
     return render_template("feedback.html", form_data=data)
+
+@app.route("/founders")
+def to_founders():
+    return render_template("founders.html")
+
+@app.route("/webdevelopers")
+def to_webdevelopers():
+    return render_template("webdevelopers.html")
 
 
 """
