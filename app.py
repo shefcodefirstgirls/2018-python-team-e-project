@@ -38,8 +38,8 @@ def upload_file():
             return redirect(url_for('uploaded_file',
                                     filename=filename))
     return render_template("share.html")
-       
-    
+
+
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
@@ -55,7 +55,7 @@ def say_hello():
 def to_post():
     return render_template("post.html")
 
-@app.route("/<name>")
+@app.errorhandler(404)
 def say_hello_to(name):
     return render_template("hello.html", user=name)
 
