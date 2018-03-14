@@ -1,10 +1,4 @@
 
-.main {
-	display: flex;
-	text-align: center;
-	justify-content: space-around;
-}
-
 
 h1 {
   font-family: fantasy, sans-serif;
@@ -15,6 +9,8 @@ body {
   color: white
 }
 
+/*header*/
+
 img {
   height: 280px;
   width: 300px;
@@ -22,12 +18,11 @@ img {
 
 .navbar {
   display:inline-flex;
-  justify-content: center;
-  padding-bottom: 100px
 }
 
 nav{
-	padding-top: 100px
+	padding-top: 50px;
+  padding-bottom:50px;
 }
 
 nav ul {
@@ -35,7 +30,6 @@ nav ul {
   font-family: inherit, sans-serif;
   font-size: 20px;
   text-align: left;
-  height:150px;
 }
 
 nav ul li {
@@ -54,6 +48,15 @@ nav ul li a {
 nav ul li a:hover {
 	color:white;
 }
+
+
+/* post */
+.main {
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+
 
 
 @media (min-width: 768px) {

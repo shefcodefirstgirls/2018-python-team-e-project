@@ -1,7 +1,21 @@
 {% include "header.html" %}
-    <h1>Upload Photo</h1>
+
+    <div class="container text-center">
+    <h1>Share your vegan meals!</h1>
     <form method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
+      <label>Name:  <input type=text name=name>
+       </label></br>
+      <label>Email:  <input type=email name=email>
+      </label></br>
+      <label>Introduction:  <input type=text name=introduction class="form-control">
+       </label>
+       </br>
+ 
+    <p>Upload Photo</p>
+    
+      <p><input type=file name=file class="btn">
+         <input type=submit value=Upload class="btn-danger">
+       </p>
     </form>
+	</div>
 {% include "footer.html" %}

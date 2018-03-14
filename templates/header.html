@@ -14,16 +14,28 @@
 </head>
 
 <body>
-  <div class="container navbar">
-  <a href="/">
+<div class="container navbar">
+  <a href="/" style=" margin: auto;">
   <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/27982695_1681204618604478_4576267005341981786_o.png?oh=167959d99384da83b28f5954716ae3b9&oe=5B0DD955"></a>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="posts">Post</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="share">Share</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-</div>
+  
+  <div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown"><a data-toggle="dropdown" href="#">About</a>
+          <ul class="dropdown-menu">
+            <li> Founders</li> </br>
+            <li> Web developers</li>
+          </ul>
+        <li><a href="posts">Posts</a></li>
+        </li>
+        <li><a href="share">Share your food!</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <form class="navbar-form text-right">
+        <input type="text" class="input-sm" placeholder="Search">
+        <button type="submit" class="btn btn-sm">Submit</button>
+      </form>
+    </div>
+ </div>

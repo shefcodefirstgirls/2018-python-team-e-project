@@ -1,10 +1,16 @@
 import os
+import psycopg2
 
 from flask import Flask, render_template, request,  redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 
+#DATABASE_URL = os.environ['DATABASE_URL']
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+####
+DATABASE=os.getcwd()+'/theyshared.dat'
+
 UPLOAD_FOLDER = os.getcwd()+'/uploads'
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask("my_first_app")
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -53,9 +59,10 @@ def to_post():
 def say_hello_to(name):
     return render_template("hello.html", user=name)
 
-@app.route("/feedback", methods=["POST"])
+@app.route("/feedback", methods=["GET", "POST"])
 def get_feedback():
-    data = request.values
+    data = request.values['email']
+    data.save(os.path.join(app.config['UPLOAD_FOLDER'], data))
     return render_template("feedback.html", form_data=data)
 
 
