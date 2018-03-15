@@ -1,10 +1,16 @@
-f = open("uploads/users.txt", "r")
-t = [line.split(',') for line in f.readlines()]
+import praw
+import pprint
 
-for li in t:
-	k="Name:"+li[0]+"\n"+"E-mail:"+li[1]
-	print (k)
+reddit = praw.Reddit(client_id='07ExaDCVmWyyHA',
+                     client_secret='lKmGTXaquPyZc2CttdmoGYrUYlI',
+                     user_agent='jedy2468')
 
-f.close()
+print(reddit.read_only) 
+print(reddit.subreddit('vegan').description)
+for submission in reddit.subreddit('vegan').hot(limit=1):
+    print(submission.title)
+    print(submission.url)
 
 
+
+    #pprint.pprint(vars(submission))
