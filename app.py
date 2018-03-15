@@ -60,12 +60,12 @@ def uploaded_file(filename):
 def say_hello():
     return render_template("index.html")
 
-@app.route("/posts")
-def to_post():
+@app.route("/hall")
+def to_hall():
     f = open("uploads/users.txt", "r")
     all_input = [line.split(',') for line in f.readlines()]
     f.close()
-    return render_template("post.html", uinfo=all_input)
+    return render_template("hall.html", uinfo=all_input)
 
 @app.route("/founders")
 def to_founders():
