@@ -10,25 +10,27 @@
 
 	 {% for each_input in uinfo: %}
 	        Name: {{each_input[0]}}</br>
-	        E-mail: {{each_input[1]}}</br>
-					<input type="text" class="input-sm" placeholder="Search">
-	        <button type="submit" class="btn btn-sm">Submit</button>
+	        <!--E-mail: {{each_input[1]}}</br>-->
+					<input type="text" class="input-sm" placeholder="Message to contributer:">
+	        <button type="submit" class="btn btn-sm">Send</button></br>
+									<aside>
+
+											<button type="button"> Like ♥
+											</button>
+
+									</aside>
+
 	    {% endfor %}
 
 
 	</p>
 
 
+
 </article>
 
-
-<aside>
-	<p>right</p>
-	<p>right</p>
-	<p>right</p>
-</aside>
-
 </div>
+
 
 
 {% include "footer.html" %}
