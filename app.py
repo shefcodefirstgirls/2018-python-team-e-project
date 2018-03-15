@@ -4,10 +4,12 @@ import psycopg2
 from flask import Flask, render_template, request,  redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 
-#DATABASE_URL = os.environ['DATABASE_URL']
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-####
+
 DATABASE=os.getcwd()+'/theyshared.dat'
+
+if not os.path.exists("uploads"):
+    os.mkdir("uploads") # making a folder in code
+
 
 UPLOAD_FOLDER = os.getcwd()+'/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -27,6 +29,13 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
+        name = request.values["name"]
+        email = request.values["email"]
+
+        with open("uploads/users.txt", "a+") as output_file:
+        #a=append w=rewrite r=read +=if it's not there, can create it
+            output_file.write(name + ",")
+            output_file.write(email + "\n")
         # if user does not select file, browser also
         # submit a empty part without filename
         if file.filename == '':
@@ -53,17 +62,10 @@ def say_hello():
 
 @app.route("/posts")
 def to_post():
-    return render_template("post.html")
-
-@app.errorhandler(404)
-def to_error(name):
-    return render_template("error.html", user=name)
-
-@app.route("/feedback", methods=["GET", "POST"])
-def get_feedback():
-    data = request.values['email']
-    data.save(os.path.join(app.config['UPLOAD_FOLDER'], data))
-    return render_template("feedback.html", form_data=data)
+    f = open("uploads/users.txt", "r")
+    all_input = [line.split(',') for line in f.readlines()]
+    f.close()
+    return render_template("post.html", uinfo=all_input)
 
 @app.route("/founders")
 def to_founders():
@@ -72,6 +74,10 @@ def to_founders():
 @app.route("/webdevelopers")
 def to_webdevelopers():
     return render_template("webdevelopers.html")
+
+@app.errorhandler(404)
+def to_error(error):
+    return render_template("error.html")
 
 
 """

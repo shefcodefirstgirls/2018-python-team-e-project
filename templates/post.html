@@ -3,16 +3,18 @@
 
 <div class="main">
 
-<aside>
-	<p>left</p>
-	<p>left</p>
-	<p>left</p>
-</aside>
+
 
 <article>
-	<div>
-	PostPostPostPostPostPostPostPostPost
-	</div>
+	<p>
+	
+	 {% for each_input in uinfo: %}
+	        Name: {{each_input[0]}}</br>
+	        E-mail: {{each_input[1]}}</br>
+	    {% endfor %}
+
+        
+	</p>
 	<div>
 	PostPostPostPostPostPostPostPostPostPostPostPostPostPost
 	</div>
