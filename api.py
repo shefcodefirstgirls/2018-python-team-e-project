@@ -11,6 +11,8 @@ for submission in reddit.subreddit('vegan').hot(limit=1):
     print(submission.title)
     print(submission.url)
 
+<a href="https://www.facebook.com/TaiwanVegHound"> <img src="facebook-box.png"></a> 
+<a href="https://www.instagram.com/vegan_taiwan"> <img src="instagram.png"></a>
 
 
     #pprint.pprint(vars(submission))
