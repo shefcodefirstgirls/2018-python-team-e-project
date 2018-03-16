@@ -79,6 +79,13 @@ def to_webdevelopers():
 def to_error(error):
     return render_template("error.html")
 
+@app.route('/like/')
+def like():
+ return render_template("like.html")
+
+@app.route('/sharefood/')
+def share():
+ return render_template("share.html")
 
 """
 This piece of logic checks whether you are running the app locally or on Heroku
