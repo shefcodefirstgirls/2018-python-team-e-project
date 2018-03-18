@@ -1,5 +1,6 @@
 import os
 import psycopg2
+import api
 
 from flask import Flask, render_template, request,  redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
@@ -75,17 +76,19 @@ def to_founders():
 def to_webdevelopers():
     return render_template("webdevelopers.html")
 
+@app.route('/like')
+def like():
+    return render_template("like.html")
+
+@app.route("/recipe")
+def recipes():
+    recipe_title=api.get_title("veganrecipes")
+    recipe_url=api.get_url("veganrecipes")
+    return render_template("recipes.html", recipe_title=recipe_title, recipe_url=recipe_url)
+
 @app.errorhandler(404)
 def to_error(error):
     return render_template("error.html")
-
-@app.route('/like/')
-def like():
- return render_template("like.html")
-
-@app.route('/sharefood/')
-def share():
- return render_template("share.html")
 
 """
 This piece of logic checks whether you are running the app locally or on Heroku

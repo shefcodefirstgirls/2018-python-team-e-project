@@ -1,18 +1,45 @@
 import praw
-import pprint
+#import pprint
 
 reddit = praw.Reddit(client_id='07ExaDCVmWyyHA',
                      client_secret='lKmGTXaquPyZc2CttdmoGYrUYlI',
                      user_agent='jedy2468')
 
-print(reddit.read_only) 
-print(reddit.subreddit('vegan').description)
-for submission in reddit.subreddit('vegan').hot(limit=1):
-    print(submission.title)
-    print(submission.url)
-
-<a href="https://www.facebook.com/TaiwanVegHound"> <img src="facebook-box.png"></a> 
-<a href="https://www.instagram.com/vegan_taiwan"> <img src="instagram.png"></a>
+#print(reddit.read_only) 
 
 
+
+
+def get_title(sub):
+    submissions=reddit.subreddit(sub).hot(limit=10)
+    title=[]
+    for submission in submissions:
+    	title.append(submission.title)
+    return (title)
+
+def get_url(sub):
+    submissions=reddit.subreddit(sub).hot(limit=10)
+    url=[]
+    for submission in submissions:
+        url.append(submission.url)
+    return (url)
+
+
+
+
+	    
+#print (getreddit("vegangifrecipes"))
+
+    
+
+    #print (submission.selftext)
+    #for comment in submission.comments:
+    	
+    
     #pprint.pprint(vars(submission))
+    #print (dir(submission))
+
+
+
+
+    
