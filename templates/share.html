@@ -1,21 +1,24 @@
 {% include "header.html" %}
 
-    <div class="container text-center">
+    
     <h1>Share your vegan meals!</h1>
-    <form method=post enctype=multipart/form-data>
-      <label>Name:  <input type=text name=name>
-       </label></br>
-      <label>Email:  <input type=email name=email>
-      </label></br>
-      <label>Introduction:  <input type=text name=introduction class="form-control">
-       </label>
+    <div class=" container col-6">
+    <form method=post enctype=multipart/form-data class="form-group">
+      <h2>Name:</h2>  <input type=text name=name class="form-control">
+       </br>
+      <h2>Email:</h2>  <input type=email name=email class="form-control">
+      </br>
+      <h2>Food:</h2>  <input type=text name=food class="form-control" placeholder="What's the food you're sharing?">
+      </br>
+      <h2>Introduction:</h2>  <textarea class="form-control" name="introduction" rows="3" placeholder="What do you want to say about the food?"></textarea>
+
        </br>
  
-    <p>Upload Photo</p>
+    <h2>Upload Photo</h2>
     
-      <p><input type=file name=file class="btn">
-         <input type=submit value=Upload class="btn-danger">
-       </p>
+      <input type=file name=file class="btn">
+      <input type=submit value=Submit class="btn-danger">
+       
     </form>
 	</div>
 {% include "footer.html" %}

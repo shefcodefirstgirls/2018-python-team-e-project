@@ -1,7 +1,7 @@
 {% include "header.html" %}
 
 
-<div class="main">
+<div class="container">
 
 
 
@@ -9,16 +9,15 @@
 	<p>
 
 	 {% for each_input in uinfo: %}
-	        Name: {{each_input[0]}}</br>
-	        <!--E-mail: {{each_input[1]}}</br>-->
-					<input type="text" class="input-sm" placeholder="Message to contributer:">
+	        Contributer: {{each_input[0]}}</br>
+			<input type="text" class="input-sm" placeholder="Message to contributer">
 	        <button type="submit" class="btn btn-sm">Send</button></br>
-									<aside>
+									<div>
 
 											<!--<button type="button"> Like ♥-->
 											<!--</button>-->
-											<a href="/like/">♡ Like me </a>
-									</aside>
+											<a href="/like/">♡ Like </a>
+									</div>
 
 	    {% endfor %}
 

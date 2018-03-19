@@ -2,7 +2,7 @@ import os
 import psycopg2
 import api
 
-from flask import Flask, render_template, request,  redirect, url_for, send_from_directory
+from flask import Flask, flash, render_template, request,  redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 
 
@@ -37,8 +37,7 @@ def upload_file():
         #a=append w=rewrite r=read +=if it's not there, can create it
             output_file.write(name + ",")
             output_file.write(email + "\n")
-        # if user does not select file, browser also
-        # submit a empty part without filename
+        # if user does not select file, browser also submit a empty part without filename
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
@@ -56,17 +55,17 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
 
-
-@app.route("/")
-def say_hello():
-    return render_template("index.html")
-
 @app.route("/hall")
 def to_hall():
     f = open("uploads/users.txt", "r")
     all_input = [line.split(',') for line in f.readlines()]
     f.close()
+    p = open("uploads", "r")
     return render_template("hall.html", uinfo=all_input)
+
+@app.route("/")
+def say_hello():
+    return render_template("index.html")
 
 @app.route("/founders")
 def to_founders():
