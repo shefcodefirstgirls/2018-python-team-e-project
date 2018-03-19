@@ -24,6 +24,13 @@ def get_url(sub):
         url.append(submission.url)
     return (url)
 
+def get_link(sub):
+    submissions=reddit.subreddit(sub).hot(limit=10)
+    link=[]
+    for submission in submissions:
+        link.append("https://www.reddit.com"+submission.permalink)
+    return (link)
+
 
 
 
