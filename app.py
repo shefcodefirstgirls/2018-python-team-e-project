@@ -80,11 +80,13 @@ def to_webdevelopers():
 def like():
     return render_template("like.html")
 
-@app.route("/recipe")
+@app.route("/recipe") #api is here
 def recipes():
     recipe_title=api.get_title("veganrecipes")
     recipe_url=api.get_url("veganrecipes")
-    return render_template("recipes.html", recipe_title=recipe_title, recipe_url=recipe_url)
+    recipe_link=api.get_link("veganrecipes")
+    return render_template("recipes.html", 
+        recipe_title=recipe_title, recipe_url=recipe_url, recipe_link=recipe_link)
 
 @app.errorhandler(404)
 def to_error(error):

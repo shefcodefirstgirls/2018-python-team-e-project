@@ -58,19 +58,49 @@ nav ul li a:hover {
 }
 
 
-/* post */
+
+/*recipe*/
+.img {max-height: 100px;
+  max-width: 100px;
+border-radius: 25px;}
+
+img :after {  
+  content : "\f1c5"  " "  attr (alt);
+  font-size : 16px ;
+  font-family : FontAwesome;
+  color : rgb (100, 100, 100);
+  display : block;
+  position : absolute;
+  z-index : 2 ;
+  top : 0 ;
+  left : 0 ;
+  width : 100% ;
+  height : 100% ;
+  background-color : #fff ; /*如果透明或不設定的話就露餡了*/
+}
+
+.gif {
+  max-height: 100px;
+  max-width: 100px;
+}
+
 .main {
   display: flex;
   text-align: center;
   justify-content: space-around;
 }
 
-
-/*recipe*/
-.gif {
-  max-height: 200px;
-  max-width: 200px;
+.recipe {
+  text-align: left;
 }
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
 
 @media (min-width: 768px) {
 
