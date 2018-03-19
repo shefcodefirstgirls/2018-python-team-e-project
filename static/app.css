@@ -15,6 +15,8 @@ body {
 
 h1 {
   font-family: fantasy, sans-serif;
+  text-align: center;
+  margin-bottom:60px;
 }
 
 /*header*/
@@ -60,24 +62,9 @@ nav ul li a:hover {
 
 
 /*recipe*/
-.img {max-height: 100px;
-  max-width: 100px;
+.img {height:40%;
+  width:40%;
 border-radius: 25px;}
-
-img :after {  
-  content : "\f1c5"  " "  attr (alt);
-  font-size : 16px ;
-  font-family : FontAwesome;
-  color : rgb (100, 100, 100);
-  display : block;
-  position : absolute;
-  z-index : 2 ;
-  top : 0 ;
-  left : 0 ;
-  width : 100% ;
-  height : 100% ;
-  background-color : #fff ; /*如果透明或不設定的話就露餡了*/
-}
 
 .gif {
   max-height: 100px;
@@ -101,6 +88,17 @@ hr {
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
+a {
+  color:white;
+}
+
+a:hover {
+  color:red;
+}
+
+.dide {
+  background: rgba(100%, 100%, 100%, 1)
+}
 
 @media (min-width: 768px) {
 
