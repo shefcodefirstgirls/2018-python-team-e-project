@@ -21,9 +21,17 @@ body {
 
 
 h1 {
-  font-family: fantasy, sans-serif;
+  font-family: 'Macondo', cursive;
   text-align: center;
   margin-bottom:60px;
+}
+
+h2 {
+font-family: 'Amatic SC', cursive;
+}
+
+p{
+  font-family: 'PT Serif', serif;
 }
 
 /*header*/
