@@ -66,6 +66,13 @@ nav ul li a:hover {
 	color:white;
 }
 
+.shareimg {
+  height:300px;
+  width:auto;
+border-radius: 25px;
+
+}
+
 
 
 /*recipe*/

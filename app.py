@@ -61,7 +61,6 @@ def to_hall():
     f = open("uploads/users.txt", "r")
     all_input = [line.split(',') for line in f.readlines()]
     f.close()
-    #p = open("uploads", "r")
     return render_template("hall.html", uinfo=all_input)
 
 @app.route("/")
