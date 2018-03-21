@@ -50,7 +50,7 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             os.rename(UPLOAD_FOLDER +"/"+ filename, UPLOAD_FOLDER+"/"+name+'.jpg')
             return render_template("hall.html")
-            #return redirect(url_for('uploaded_file', filename=filename)) 
+            #return redirect(url_for('uploaded_file', filename=filename))
     return render_template("share.html")
 
 
@@ -79,8 +79,8 @@ def to_founders():
 def to_webdevelopers():
     return render_template("webdevelopers.html")
 
-@app.route('/like')
-def like():
+@app.route("/like/")
+def liked():
     return render_template("like.html")
 
 @app.route("/recipe") #api is here
@@ -88,7 +88,7 @@ def recipes():
     recipe_title=api.get_title("veganrecipes")
     recipe_url=api.get_url("veganrecipes")
     recipe_link=api.get_link("veganrecipes")
-    return render_template("recipes.html", 
+    return render_template("recipes.html",
         recipe_title=recipe_title, recipe_url=recipe_url, recipe_link=recipe_link)
 
 @app.errorhandler(404)
