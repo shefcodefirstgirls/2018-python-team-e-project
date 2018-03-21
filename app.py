@@ -32,11 +32,15 @@ def upload_file():
         file = request.files['file']
         name = request.values["name"]
         email = request.values["email"]
+        food = request.values["food"]
+        introduction = request.values["introduction"]
 
         with open("uploads/users.txt", "a+") as output_file:
         #a=append w=rewrite r=read +=if it's not there, can create it
             output_file.write(name + ",")
-            output_file.write(email + "\n")
+            output_file.write(email + ",")
+            output_file.write(food + ",")
+            output_file.write(introduction + "\n")
         # if user does not select file, browser also submit a empty part without filename
         if file.filename == '':
             flash('No selected file')
