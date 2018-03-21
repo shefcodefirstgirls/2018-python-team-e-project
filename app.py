@@ -80,7 +80,7 @@ def to_webdevelopers():
     return render_template("webdevelopers.html")
 
 @app.route("/like/")
-def liked():
+def like():
     return render_template("like.html")
 
 @app.route("/recipe") #api is here

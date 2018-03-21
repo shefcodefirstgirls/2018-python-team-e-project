@@ -6,7 +6,7 @@
 
 
 <article>
-	
+<center>
 
 	 {% for each_input in uinfo: %}
 	        <h2>Contributer: {{each_input[0]}}</h2>
@@ -14,14 +14,9 @@
 	        <h2>Introduction: {{each_input[3]}}</h2>
 	        <img src="uploads/{{each_input[0]}}.jpg" class="shareimg" onerror="this.onerror=null;this.src='https://scontent-lht6-1.xx.fbcdn.net/v/t31.0-8/27982695_1681204618604478_4576267005341981786_o.png?oh=167959d99384da83b28f5954716ae3b9&oe=5B0DD955';">
 			<input type="text" class="input-sm" placeholder="Message to contributer">
-	        <button type="submit" class="btn btn-sm">Send</button></br>
-									<div>
 
-											<!--<button type="button"> Like ♥-->
-											<!--</button>-->
-											<a href="/like/">♡ Like </a>
-									</div>
-
+					<a href="mailto:someone@example.com?Subject=From%20Vegan:%20Hello" target="_top"> <button type="submit" class="btn btn-sm">Send</button></a></br>
+</center>
 	    {% endfor %}
 
 
@@ -31,8 +26,13 @@
 
 </article>
 
-</div>
+<center>
+		<!--<button type="button"> Like ♥-->
+		<!--</button>-->
+		<a href="/like">♡ Like </a>
+</center>
 
+</div>
 
 
 {% include "footer.html" %}
