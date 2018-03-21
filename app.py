@@ -13,7 +13,7 @@ if not os.path.exists("uploads"):
 
 
 UPLOAD_FOLDER = os.getcwd()+'/uploads'
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask("my_first_app")
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -44,8 +44,9 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploaded_file',
-                                    filename=filename))
+            os.rename(UPLOAD_FOLDER +"/"+ filename, UPLOAD_FOLDER+"/"+name+'.jpg')
+            return render_template("hall.html")
+            #return redirect(url_for('uploaded_file', filename=filename)) 
     return render_template("share.html")
 
 
