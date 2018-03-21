@@ -27,12 +27,13 @@ h1 {
 }
 
 h2 {
-font-family: 'Amatic SC', cursive;
+font-family: 'Jura', sans-serif;}
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px
 }
 
-p{
-  font-family: 'PT Serif', serif;
-}
 
 /*header*/
 
@@ -75,7 +76,7 @@ nav ul li a:hover {
 }
 
 .shareimg {
-  height:300px;
+  height:400px;
   width:auto;
 border-radius: 25px;
 
